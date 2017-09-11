@@ -10,6 +10,9 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import com.xu.myandroidtest.asynctask.AsyncTaskTest;
+import com.xu.myandroidtest.dict.DictActivity;
+import com.xu.myandroidtest.file.FileTestActivity;
+import com.xu.myandroidtest.file.SDFileExplorerActivity;
 import com.xu.myandroidtest.myaddress.MyAddressActivity;
 
 import java.util.ArrayList;
@@ -27,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
         asyncTaskBn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent asyncTaskIntent = new Intent(MainActivity.this,AsyncTaskTest.class);
-                startActivity(asyncTaskIntent);
+                //Intent intent = new Intent(MainActivity.this,SDExplorerActivity.class);
+                //startActivity(intent);
             }
         });
 
@@ -58,7 +61,21 @@ public class MainActivity extends AppCompatActivity {
                     case "myaddress":
                         startActivity(new Intent(MainActivity.this,MyAddressActivity.class));
                         break;
+
+                    case "File存储":
+                        startActivity(new Intent(MainActivity.this,FileTestActivity.class));
+                        break;
+
+                    case "SD卡文件浏览器":
+                        startActivity(new Intent(MainActivity.this,SDFileExplorerActivity.class));
+                        break;
+
+                    case "英文单词本":
+                        startActivity(new Intent(MainActivity.this,DictActivity.class));
+                        break;
+
                     default:break;
+
                 }
 
             }
@@ -78,5 +95,24 @@ public class MainActivity extends AppCompatActivity {
         map.put("source","work");
         map.put("content","no content");
         myList.add(map);
+
+        map = new HashMap<>();
+        map.put("name","File存储");
+        map.put("source","crazy");
+        map.put("content","no content");
+        myList.add(map);
+
+        map = new HashMap<>();
+        map.put("name","SD卡文件浏览器");
+        map.put("source","crazy");
+        map.put("content","no content");
+        myList.add(map);
+
+        map = new HashMap<>();
+        map.put("name","英文单词本");
+        map.put("source","crazy");
+        map.put("content","SQLite练习");
+        myList.add(map);
+
     }
 }
